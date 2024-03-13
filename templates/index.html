@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immunization System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Immunization System</h1>
+    <div id="doctor-form">
+        <h2>Doctor's Interface</h2>
+        <form id="immunization-form">
+            <label for="patient_name">Patient Name:</label>
+            <input type="text" id="patient_name" name="patient_name" required><br><br>
+
+            <label for="vaccine_id">Vaccine Id:</label>
+            <select id="vaccine_id" name="vaccine_id" required>
+                {% for vaccine in vaccines %}
+                <option value="{{ vaccine['name'] }}">{{ vaccine['name'] }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="birth_date">Birth Date:</label>
+            <input type="date" id="birth_date" name="birth_date" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="patient-view">
+        <h2>Patient's Interface</h2>
+        <div id="immunization-list"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

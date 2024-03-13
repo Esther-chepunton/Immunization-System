@@ -1,0 +1,29 @@
+/* static/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#doctor-form, #patient-view {
+    margin-top: 20px;
+}
+
+form {
+    display: inline-block;
+}
+
+label {
+    display: block;
+}
+
+#immunization-list {
+    margin-top: 20px;
+}
+
+#immunization-list ul {
+    list-style-type: none;
+}
+
+#immunization-list ul li {
+    margin-bottom: 10px;
+}
